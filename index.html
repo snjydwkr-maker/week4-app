@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three-Agent Topic Workflow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <h1>Three-Agent Topic Review</h1>
+        <p>
+          Enter a topic, review each agent’s work, and approve the step before moving to the next.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="topic-form">
+          <label for="topic">Topic</label>
+          <div class="form-row">
+            <input id="topic" name="topic" type="text" placeholder="e.g. climate change" required />
+            <button type="submit">Start workflow</button>
+          </div>
+        </form>
+
+        <div id="status" class="status" aria-live="polite">Ready to begin.</div>
+      </section>
+
+      <section class="results-grid" id="results-grid">
+        <article class="result-card">
+          <h2>Agent 1 output</h2>
+          <div id="agent-1-output" class="output-area">Waiting for the first draft.</div>
+          <div id="agent-1-actions" class="actions"></div>
+        </article>
+
+        <article class="result-card">
+          <h2>Agent 2 output</h2>
+          <div id="agent-2-output" class="output-area">Waiting for the improved version.</div>
+          <div id="agent-2-actions" class="actions"></div>
+        </article>
+
+        <article class="result-card">
+          <h2>Agent 3 final report</h2>
+          <div id="agent-3-output" class="output-area">Waiting for the final report.</div>
+          <div id="agent-3-actions" class="actions"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
